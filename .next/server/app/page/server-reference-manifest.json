@@ -1,0 +1,20 @@
+{
+  "node": {
+    "409c29306141121fcb624b6b24e5a69d7dc12e17ea": {
+      "workers": {
+        "app/page": {
+          "moduleId": 72013,
+          "async": false,
+          "exportedName": "getSheetData",
+          "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts"
+        }
+      },
+      "layer": {
+        "app/page": "rsc"
+      },
+      "exportedName": "getSheetData",
+      "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts"
+    }
+  },
+  "edge": {}
+}

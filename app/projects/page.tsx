@@ -133,7 +133,7 @@ export default async function ProjectsPage() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {tags.map((t) => (
+                    {tags.map((t:string) => (
                       <span
                         key={t}
                         className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded"

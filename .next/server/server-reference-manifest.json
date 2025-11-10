@@ -1,0 +1,49 @@
+{
+  "node": {
+    "409c29306141121fcb624b6b24e5a69d7dc12e17ea": {
+      "workers": {
+        "app/about/page": {
+          "moduleId": 73766,
+          "async": false,
+          "exportedName": "getSheetData",
+          "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts"
+        },
+        "app/feature/page": {
+          "moduleId": 29970,
+          "async": false,
+          "exportedName": "getSheetData",
+          "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts"
+        },
+        "app/page": {
+          "moduleId": 72013,
+          "async": false,
+          "exportedName": "getSheetData",
+          "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts"
+        },
+        "app/projects/[slug]/page": {
+          "moduleId": 44348,
+          "async": false,
+          "exportedName": "getSheetData",
+          "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts"
+        },
+        "app/projects/page": {
+          "moduleId": 6268,
+          "async": false,
+          "exportedName": "getSheetData",
+          "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts"
+        }
+      },
+      "layer": {
+        "app/about/page": "rsc",
+        "app/feature/page": "rsc",
+        "app/page": "rsc",
+        "app/projects/[slug]/page": "rsc",
+        "app/projects/page": "rsc"
+      },
+      "filename": "orbit-engineering-service/app/lib/fetchGoogleSheet.ts",
+      "exportedName": "getSheetData"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "r0PieKHIMzm69ckEwAUx0+09ERYPcjb9BNGzOFeJsZY="
+}
