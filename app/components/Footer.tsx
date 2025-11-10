@@ -1,10 +1,17 @@
 // components/Footer.tsx
+import Image from 'next/image';
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white py-12">
       <div className="container mx-auto px-4 grid md:grid-cols-4 gap-6">
         <div>
-          <img src="/img/logo.png" alt="Orbit" className="h-12 mb-4" />
+          <Image 
+                      src="/img/logo.png" 
+                      alt="Orbit Logo" 
+                      width={190} 
+                      height={190} 
+                      priority 
+                    />
           <p className="text-slate-400 text-sm">Leading provider of engineering & infrastructure consultancy services.</p>
         </div>
 

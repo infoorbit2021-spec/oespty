@@ -34,3 +34,53 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+```
+orbit-engineering-service
+├─ app
+│  ├─ about
+│  │  └─ page.tsx
+│  ├─ components
+│  │  ├─ About.tsx
+│  │  ├─ Clients.tsx
+│  │  ├─ FeatureCard.tsx
+│  │  ├─ FeatureSection.tsx
+│  │  ├─ Footer.tsx
+│  │  ├─ GetInTouch.tsx
+│  │  ├─ Header.tsx
+│  │  ├─ Hero.tsx
+│  │  ├─ ProjectCard.tsx
+│  │  ├─ ProjectDetail.tsx
+│  │  ├─ ProjectSection.tsx
+│  │  └─ Stats.tsx
+│  ├─ favicon.ico
+│  ├─ feature
+│  │  ├─ page.tsx
+│  │  └─ [slug]
+│  │     └─ page.tsx
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ lib
+│  │  └─ fetchGoogleSheet.ts
+│  ├─ page.tsx
+│  └─ projects
+│     ├─ page.tsx
+│     └─ [slug]
+│        └─ page.tsx
+├─ eslint.config.mjs
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ img
+│  │  └─ logo.PNG
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+├─ README.md
+└─ tsconfig.json
+
+```

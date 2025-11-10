@@ -1,4 +1,5 @@
 // lib/fetchGoogleSheet.ts
+'use server';
 import { google } from 'googleapis';
 
 export async function getSheetData(sheetName: string) {
@@ -25,6 +26,7 @@ export async function getSheetData(sheetName: string) {
     headers.forEach((h, i) => {
       obj[h as string] = row[i] ?? '';
     });
+    console.log(JSON.stringify(obj));
     return obj;
   });
 }

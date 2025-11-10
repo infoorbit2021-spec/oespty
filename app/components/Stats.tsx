@@ -1,6 +1,7 @@
 // components/Stats.tsx
-export default function Stats({ data }: any) {
-  if (!Array.isArray(data) || data.length === 0) return null;
+import { getSheetData } from '../lib/fetchGoogleSheet'
+export default async function Stats() {
+  const data = await getSheetData('Stats')
 
   // data expected as array of objects: { Label: 'Projects Completed', Count: '500+' }
   return (
