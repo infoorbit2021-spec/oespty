@@ -4,7 +4,7 @@ export default function GetInTouch() {
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
         <div className="bg-white rounded-xl shadow-lg p-8">
-          <form className="grid gap-6 md:grid-cols-2">
+          <form className="flex flex-col gap-6">
             <div>
               <label htmlFor="name" className="block text-slate-700 font-medium mb-1">Your Name</label>
               <input id="name" type="text" className="w-full border border-gray-300 rounded-lg p-3" placeholder="John Doe" required />

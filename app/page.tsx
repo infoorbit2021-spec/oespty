@@ -36,7 +36,7 @@ export default async function HomePage() {
         <main>
           <Hero />
           <Stats />
-           <section className="container w-100 ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
+           <section className="container ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
               <div>
                 
                 <Services />

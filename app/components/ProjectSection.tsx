@@ -3,7 +3,7 @@ import { generateNextSeo } from 'next-seo/pages'
 import ProjectCard from './ProjectCard'
 
 export const revalidate = 600
-
+ 
 export default async function ProjectsPage() {
   const data = await getSheetData('ProjectList')
 

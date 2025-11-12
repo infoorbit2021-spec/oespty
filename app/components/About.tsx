@@ -1,13 +1,24 @@
-export default function About() {
+import { getSheetData } from '../lib/fetchGoogleSheet';
+
+export default async function About() {
+  const rows = await getSheetData('Home');
+
+  const aboutData: Record<string, string> = {};
+
+  rows.forEach((row: any) => {
+    if (row.Section?.toLowerCase() === 'about') {
+      aboutData[row.Field] = row.Value;
+    }
+  });
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-3xl font-bold mb-4">About Us</h2>
+          <h2 className="text-3xl font-bold mb-4">{aboutData.title}</h2>
           <p className="text-slate-600 mb-4">
-            Orbit Engineering Services delivers cutting-edge solutions in BIM, CAD drafting, and comprehensive project support.
+            {aboutData.description}
           </p>
-          <p className="text-slate-600 mb-6">
+          {/* <p className="text-slate-600 mb-6">
             Our mission is to reduce waste, improve collaboration, and accelerate innovation through intelligent modeling.
           </p>
           <ul className="space-y-4">
@@ -23,14 +34,16 @@ export default function About() {
               </span>
               <span><strong>Expert Team</strong> — Certified professionals</span>
             </li>
-          </ul>
+          </ul> */}
         </div>
         <div>
+          {aboutData.image && (
           <img
-            src="https://images.unsplash.com/photo-1609293241092-8c4e5cf64af8?auto=format&fit=crop&w=800&q=80"
-            alt="Engineering team"
-            className="rounded-2xl shadow-lg"
+              src={`/img/${aboutData.image}`}
+              alt={aboutData.title || 'About Image'}
+            className="rounded-lg shadow-lg mx-auto"
           />
+        )}
         </div>
       </div>
     </section>

@@ -23,6 +23,7 @@ export default function Header() {
           <Link href="/feature">Features</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/contact">Contact Us</Link>
+          <Link href="/careers">Careers</Link>
         </nav>
 
 
