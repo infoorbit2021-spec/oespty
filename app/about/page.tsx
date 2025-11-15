@@ -74,10 +74,10 @@ export default async function AboutPage() {
       </section>
 
       {/* MAIN CONTENT */}
-      <main className="container mx-auto py-16 px-4">
+      <main className="container mx-auto">
         {/* ABOUT SECTION */}
-        <section id="about" className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
+        <section id="about" className="py-20 bg-gradient-to-br from-sky-50 to-teal-50 px-6">
+          <div className="container mx-auto grid md:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl font-bold mb-4">{about.Title}</h2>
               <div
