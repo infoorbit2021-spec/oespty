@@ -102,7 +102,7 @@ export default function Services() {
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            {tabs[0]?.SectionTitle || "Services Offered"}
+            {tabs[0]?.title || "Services Offered"}
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
         </div>
@@ -124,7 +124,7 @@ export default function Services() {
                   }
                 `}
               >
-                {tab.Icon && <i className={`${tab.Icon} text-lg`}></i>}
+                {/* {tab.Icon && <i className={`${tab.Icon} text-lg`}></i>} */}
                 <span className="font-medium text-sm md:text-base">{tab.title}</span>
               </button>
             ))}
