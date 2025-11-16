@@ -26,7 +26,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/img/logo.png"
+            src="/img/logo.PNG"
             alt="Orbit Logo"
             width={190}
             height={190}

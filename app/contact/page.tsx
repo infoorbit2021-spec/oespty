@@ -52,7 +52,7 @@ export default async function ContactSection() {
                       <h4 className="text-lg font-semibold text-slate-800 mt-6 mb-2">
                           Office Location
                       </h4>
-                      <div className="bg-slate-100 rounded-xl min-h-[500px] p-6 overflow-hidden">
+                      <div className="bg-slate-100 rounded-xl min-h-[250px] p-6 overflow-hidden">
                           
                       </div>
                   </div>

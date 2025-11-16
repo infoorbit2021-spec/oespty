@@ -29,7 +29,7 @@ export default function Clients() {
             {[...clients, ...clients].map((logo, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-40 h-28 rounded-1xl bg-gray-50 shadow-md hover:shadow-lg flex items-center justify-center transition-all"
+                className="flex-shrink-0 w-40 h-28 rounded-1xl flex items-center justify-center transition-all"
               >
                 <img
                   src={`/img/client/${logo}`}
