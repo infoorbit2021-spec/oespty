@@ -96,7 +96,7 @@ export default function ContactSection() {
       <Header />
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+      {/* <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
@@ -128,8 +128,18 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
-      </div>
-
+      </div> */}
+  <section className="relative h-[200px] flex items-center overflow-hidden">
+        <img
+          src={`/img/contact_us_hero.jpg`}
+          alt="Projects Hero"
+          className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
+        <div className="container mx-auto relative z-10 px-6">
+          <h1 className="text-white text-4xl font-semibold mb-2">Contact Us</h1>
+          {/* <p className="text-slate-200 max-w-2xl">{hero.Subtitle}</p> */}
+        </div>
+      </section>
       {/* Office Locations Section */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="mb-12">
@@ -138,7 +148,6 @@ export default function ContactSection() {
             Select an office to view location details and contact information
           </p>
         </div>
-
         {/* Office Pills Navigation */}
         {locations.length > 0 && (
           <div className="flex flex-wrap gap-3 mb-8">
@@ -430,3 +439,4 @@ export default function ContactSection() {
     </>
   );
 }
+                                                                                    
