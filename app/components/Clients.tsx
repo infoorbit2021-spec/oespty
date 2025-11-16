@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 
 export default function Clients() {
-  const clients = ["ae_smith.png", "air_master.png", "ambient_services.jpg", "amin_group.PNG","climatech.png", "equilibrium.jpg", "fredon.jpg", "Icon_mechanical_services.png", "jec_airconditioning.jpg","metalair_sheetmetal.png", "precise_air.png", "protech.png", "Icon_mechanical_services.png", "redstar.jpg","seda_services_logo.jpg","varium.png"];
+  const clients = ["ae_smith.png", "air_master.png", "ambient_services.jpg", "amin_group.PNG","climatech.png", "equilibrium.jpg", "fredon.jpg",  "jec_airconditioning.jpg","metalair_sheetmetal.png", "precise_air.png", "protech.png", "Icon_mechanical_services.png", "redstar.jpg","seda_services_logo.jpg","varium.png"];
 
   return (
     <section className="py-20 bg-gradient-to-br from-sky-50 text-center overflow-hidden">
