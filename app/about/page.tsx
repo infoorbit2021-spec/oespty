@@ -29,15 +29,14 @@ export default async function AboutPage() {
   );
 
   // Dynamic Description Blocks
-const sections = rows
-  .filter((r: any) => r.Section === 'Description')
-  .filter((r: any) => r.Title?.trim() || r.Text?.trim()) // <-- remove empty rows
-  .map((r: any) => ({
-    title: r.Title?.trim(),
-    text: r.Text?.trim(),
-    parallax: r.Parallax || r.parallax || '', // preserve existing logic
-  }));
-
+  const sections = rows
+    .filter((r: any) => r.Section === 'Description')
+    .filter((r: any) => r.Title?.trim() || r.Text?.trim())
+    .map((r: any) => ({
+      title: r.Title?.trim(),
+      text: r.Text?.trim(),
+      parallax: r.Parallax || r.parallax || '',
+    }));
 
   const journeyData = journeyRows.filter((r: any) => r.Section === 'Journey');
   const managementData = managementRows.filter((r: any) => r.Section === 'Management');
@@ -53,21 +52,15 @@ const sections = rows
     },
   });
 
-  // Titles requiring parallax
-  const parallaxList = [
-    "About Our Company",
-    "Our Commitment",
-    "Our Vision",
-    "Our Projects Include",
+  const overlayColors = [
+    "bg-rose-100/70 dark:bg-rose-900/60",
+    "bg-indigo-100/70 dark:bg-indigo-900/60",
+    "bg-emerald-100/70 dark:bg-emerald-900/60",
+    "bg-amber-100/70 dark:bg-amber-900/60",
+    "bg-sky-100/70 dark:bg-sky-900/60",
+    "bg-violet-100/70 dark:bg-violet-900/60",
   ];
-const overlayColors = [
-  "bg-rose-100/70 dark:bg-rose-900/60",
-  "bg-indigo-100/70 dark:bg-indigo-900/60",
-  "bg-emerald-100/70 dark:bg-emerald-900/60",
-  "bg-amber-100/70 dark:bg-amber-900/60",
-  "bg-sky-100/70 dark:bg-sky-900/60",
-  "bg-violet-100/70 dark:bg-violet-900/60",
-];
+
   return (
     <>
       <Header />
@@ -97,7 +90,6 @@ const overlayColors = [
           style={{ backgroundImage: `url(/img/${about.Image})` }}
         >
           <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
-
           <div className="relative container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-6">{about.Title}</h2>
             <div
@@ -109,48 +101,32 @@ const overlayColors = [
 
         {/* DYNAMIC SUBSECTIONS */}
         {sections.map((s, i) => {
-  const isParallax = ['true', 'yes', '1'].includes(String(s.parallax).toLowerCase());
+          const isParallax = ['true', 'yes', '1'].includes(String(s.parallax).toLowerCase());
+          const overlayColor = overlayColors[i % overlayColors.length];
 
- const overlayColor = overlayColors[i % overlayColors.length];
-  return (
-  
-      <section
-      key={i}
-          className="relative py-28 px-8 bg-fixed bg-center bg-cover text-slate-900"
-          style={{ backgroundImage: `url(/img/${about.Image})` }}
-        >
-      {/* Parallax Overlay */}
-     
-        <div className={`absolute inset-0 backdrop-blur-sm ${overlayColor}`} />
-      
+          return (
+            <section
+              key={i}
+              className="relative py-28 px-8 bg-fixed bg-center bg-cover"
+              style={{ backgroundImage: `url(/img/${about.Image})` }}
+            >
+              <div className={`absolute inset-0 backdrop-blur-sm ${overlayColor}`} />
 
-      <div className="relative max-w-4xl mx-auto text-center">
-        {s.title && (
-          <h3
-            className={`text-4xl font-semibold mb-6 ${
-              isParallax ? 'text-black' : 'text-slate-900'
-            }`}
-          >
-            {s.title}
-          </h3>
-        )}
+              <div className="relative max-w-4xl mx-auto text-center">
+                {s.title && <h3 className="text-4xl font-semibold mb-6">{s.title}</h3>}
 
-        {s.text && (
-          <p
-            className={`whitespace-pre-line text-lg leading-relaxed max-w-3xl mx-auto ${
-              isParallax ? 'text-black' : 'text-slate-700'
-            }`}
-         
-            dangerouslySetInnerHTML={{ __html: s.text }}  >
-          </p>
-        )}
-      </div>
-    </section>
-  );
-})}
+                {s.text && (
+                  <div
+                    className="prose prose-lg mx-auto text-black"
+                    dangerouslySetInnerHTML={{ __html: s.text }}
+                  />
+                )}
+              </div>
+            </section>
+          );
+        })}
 
-
-        {/* UNCHANGED SECTIONS BELOW */}
+        {/* UNCHANGED SECTIONS */}
         <ManagementTeam data={managementData} />
         <Projects />
         <Services />
