@@ -1,5 +1,6 @@
 import FeatureDialog from "./FeatureDialog";
 import { getSheetData } from "../lib/fetchGoogleSheet";
+import Link from 'next/link';
 
 export default async function FeatureCard({ feature }: { feature: any }) {
   // Fetch all feature details from Google Sheet
@@ -17,7 +18,14 @@ export default async function FeatureCard({ feature }: { feature: any }) {
         {feature.ShortDescription ?? feature.Intro ?? feature.Description}
       </p>
       {/* Pass both feature + matched detail */}
-      <FeatureDialog feature={featureDetail ?? feature} />
+      {/* <FeatureDialog feature={featureDetail ?? feature} /> */}
+      <Link href="/services" >
+       <div
+        className="text-blue-600 hover:underline cursor-pointer font-medium"
+      >
+        Learn More →
+      </div>
+      </Link>
     </div>
   );
 }

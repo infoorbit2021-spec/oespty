@@ -67,19 +67,30 @@ export default function ContactSection() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // Your form submission logic here
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+
+  if (response.ok) {
+    alert("Your message has been successfully sent!");
+    setFormData({
+      name: "",
+      email: "",
+      contact: "",
+      subject: "General",
+      message: "",
+      preferredOffice: formData.preferredOffice,
     });
-    if (response.ok) {
-      // Handle success
-      console.log("Form submitted successfully");
-    }
-  };
+  } else {
+    alert("Error sending message. Please try again later.");
+  }
+};
+
 
   // Generate Google Maps embed URL
   const getMapUrl = (lat: number, lng: number) => {
