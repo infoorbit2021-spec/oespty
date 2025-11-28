@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           },
         })}
       </head>
-      <body className="min-h-screen bg-white text-slate-800">
+      <body className="min-h-screen bg-gradient-to-r from-white-900/80 via-white-900/40 to-transparent">
         {children}
       </body>
     </html>

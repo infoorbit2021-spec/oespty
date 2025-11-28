@@ -127,6 +127,10 @@
   }
 }
 
+body{
+  background-color: #f9fafc !important;
+}
+
 .parallax-section {
   position: relative;
   background-attachment: fixed;
@@ -149,3 +153,5 @@
   max-width: 900px;
   margin: auto;
 }
+img { transform: none; transition: transform 240ms ease; will-change: transform; }
+img:hover { transform: scale(1.1) rotate(-5deg); transform-origin: center center; }

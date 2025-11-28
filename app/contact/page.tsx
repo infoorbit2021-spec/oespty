@@ -146,7 +146,7 @@ export default function ContactSection() {
           alt="Projects Hero"
           className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
-        <div className="container mx-auto relative z-10 px-6">
+        <div className=" mx-auto relative z-10 px-6">
           <h1 className="text-white text-4xl font-semibold mb-2">Contact Us</h1>
           {/* <p className="text-slate-200 max-w-2xl">{hero.Subtitle}</p> */}
         </div>

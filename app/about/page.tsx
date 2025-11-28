@@ -76,15 +76,15 @@ export default async function AboutPage() {
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
-        <div className="container mx-auto relative z-10 px-6">
+        <div className="absolute inset-0 " />
+        <div className=" mx-auto relative z-10 px-6">
           <h1 className="text-white text-4xl font-semibold mb-2">About Us</h1>
           <p className="text-slate-200 max-w-2xl">{about.Subtitle}</p>
         </div>
       </section>
 
       {/* MAIN CONTENT */}
-      <main className="container mx-auto">
+      <main className=" mx-auto">
 
         {/* FIRST ABOUT SECTION → PARALLAX */}
         {/* <section
@@ -93,14 +93,14 @@ export default async function AboutPage() {
         >
           <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
           <div className='grid md:grid-cols-2 gap-12'>
-          <div className="relative container mx-auto max-w-4xl">
+          <div className="relative  mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-6">{about.Title}</h2>
             <div
               className="text-lg leading-relaxed"
               dangerouslySetInnerHTML={{ __html: about.Description }}
             />
           </div>
-           <div className='relative container mx-auto max-w-4xl'>
+           <div className='relative  mx-auto max-w-4xl'>
           {about.Image && (
           <img
               src={`/img/${about.Image}`}
@@ -119,7 +119,7 @@ export default async function AboutPage() {
   {/* Overlay */}
   <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
 
-  <div className="relative container mx-auto max-w-5xl">
+  <div className="relative  mx-auto max-w-5xl">
     {/* Image floating left */}
     {about.Image && (
       <img
