@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function ParallaxTimeline({ sections, about, overlayColors }: any) {
   return (
-    <div className="relative border-l-4 border-blue-500 ml-6">
+    <div className="relative border-l-4 border-blue-500 ml-6 ">
       {sections.map((s: any, i: number) => {
         const isRight = i % 2 === 0;
         const overlay = overlayColors[i % overlayColors.length];

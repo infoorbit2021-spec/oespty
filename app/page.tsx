@@ -48,7 +48,7 @@ export default async function HomePage() {
             </Reveal>
 
             <Reveal>
-              <section className="ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
+              <section className="ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0 px-5">
                 <div>
                   <Services />
                 </div>

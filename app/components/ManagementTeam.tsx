@@ -2,7 +2,7 @@ import { Linkedin } from "lucide-react";
 
 export default function ManagementTeam({ data }: { data: any[] }) {
   return (
-    <section className="mb-16 px-6">
+    <section className="mb-16 px-6   mx-auto max-w-5xl">
       <h3 className="text-3xl ps-6 my-6 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent text-start">
        <strong>Management Team</strong> 
       </h3>

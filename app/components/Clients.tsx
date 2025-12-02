@@ -5,7 +5,7 @@ export default function Clients() {
   const clients = ["ae_smith.png", "air_master.png", "ambient_services.jpg", "amin_group.PNG","climatech.png", "equilibrium.jpg", "fredon.jpg",  "jec_airconditioning.jpg","metalair_sheetmetal.png", "precise_air.png", "protech.png",  "redstar.jpg","seda_services_logo.jpg","varium.png"];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-sky-50 text-center overflow-hidden">
+    <section className="py-20 bg-white text-center overflow-hidden">
       <div className=" mx-auto px-6">
         <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
           Trusted by Industry Leaders

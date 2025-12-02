@@ -154,7 +154,7 @@ body{
   margin: auto;
 }
 img { transform: none; transition: transform 240ms ease; will-change: transform; }
-img:hover { transform: scale(1.1) rotate(-5deg); transform-origin: center center; }
+img:hover { transform: scale(1.1); transform-origin: center center; }
 
 /* Fade + slight upward motion */
 .reveal {

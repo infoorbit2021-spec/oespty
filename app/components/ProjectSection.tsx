@@ -19,9 +19,9 @@ export default async function ProjectsPage() {
           },
         })}
       
-        <main className=" mx-auto py-16 px-4" style={{background:"#f0f8ff"}}>
-          <><h1 className="text-4xl font-bold mb-8 px-6">Our Projects</h1>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+        <main className=" mx-auto py-16 px-5 " style={{background:"#f0f8ff"}}>
+          <><h1 className="text-4xl font-bold mb-8 px-6   mx-auto max-w-5xl">Our Projects</h1>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-6  mx-auto max-w-5xl">
             {data.map((p) => (
               <ProjectCard key={p.Slug} project={p} />
             ))}

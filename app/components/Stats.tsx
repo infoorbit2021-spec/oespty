@@ -11,7 +11,7 @@ export default function Stats({ data, pathname }: { data: StatItem[], pathname: 
   const applyLiftStyle = pathname === "/projects";
 
   return (
-    <section className="bg-white pb-16">
+    <section className="bg-white pb-16 px-5">
       <div className="mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
         {data.map((stat, i) => (
           <div

@@ -69,7 +69,7 @@ export default async function AboutPage() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="relative h-[200px] flex items-center overflow-hidden">
+      <section className="relative h-[200px] flex items-center overflow-hidden ">
         {about.Image && (
           <img
             src={`/img/${about.hero}`}
@@ -170,18 +170,21 @@ export default async function AboutPage() {
               </div>
             </section>
           );
+
         })} */}
+        <div className="relative  mx-auto max-w-5xl">
 <Reveal>
         <ParallaxSections
   sections={sections}
   about={about}
   overlayColors={overlayColors}
 /></Reveal>
-
+</div>
         {/* UNCHANGED SECTIONS */}
        <Reveal> <ManagementTeam data={managementData} /></Reveal>
         <Reveal><Projects /></Reveal>
         <Reveal><Services /></Reveal>
+       
       </main>
 
       <Footer />
