@@ -151,7 +151,7 @@ function ProjectCard({ project }: { project: Project }) {
 
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-1">{project.Title}</h3>
-        <p className="text-sm text-slate-600 mb-3">{project.ShortDescription}</p>
+        <p className="text-sm text-slate-600 mb-3 elipsis">{project.ShortDescription}</p>
 
         <div className="flex items-center gap-4 text-xs text-slate-500 mb-3">
           {project.Location && <span>📍 {project.Location}</span>}

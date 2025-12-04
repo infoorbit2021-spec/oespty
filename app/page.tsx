@@ -16,7 +16,7 @@ export const revalidate = 600
 
 export default async function HomePage() {
   const rows = await getSheetData('Home')
-  const statsData = await getSheetData<StatItem>('Stats')
+  const statsData = await getSheetData('Stats')
   
   const seo = rows.find((r: any) => r.Section === 'SEO') || {}
   const projectLimitRow = rows.find((r: any) => r.Section === "Projects")

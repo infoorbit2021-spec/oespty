@@ -7,6 +7,8 @@ export default async function Hero() {
   // ✅ Fetch sheet data server-side
   const slides = await getSheetData("Hero");
 
+  console.log("slides.........................................",slides);
+
   if (!slides || slides.length === 0) {
     return (
       <section className="h-[70vh] flex items-center justify-center bg-slate-900 text-slate-300">
