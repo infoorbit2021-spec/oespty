@@ -143,7 +143,7 @@ export default function ContactSection() {
       </div> */}
   <section className="relative h-[200px] flex items-center overflow-hidden">
         <img
-          src={`/img/contact_us_hero.jpg`}
+          src={`/img/contact_us_her_img.jpg`}
           alt="Projects Hero"
           className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />

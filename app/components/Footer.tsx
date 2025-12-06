@@ -6,7 +6,7 @@ export default function Footer() {
       <div className=" mx-auto p-4 grid md:grid-cols-4 gap-6">
         <div>
           <Image 
-                      src="/img/logo.PNG" 
+                      src="/img/Orbit_white_logo.png" 
                       alt="Orbit Logo" 
                       width={190} 
                       height={190} 

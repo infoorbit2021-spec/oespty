@@ -18,7 +18,7 @@ export default async function ProjectsPage() {
 
   // ✅ Hero Section
   const hero = heroRows?.[0] || {
-    Image: "projects-hero.jpg",
+    Image: "hero3.jpg",
     Subtitle: "Explore our engineering excellence through innovative projects.",
   };
 
