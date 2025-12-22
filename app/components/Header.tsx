@@ -14,10 +14,11 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Sample Projects', href: '/sample-projects' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Sample Projects', href: '/sample-projects' },
+    
   ];
 
   return (
