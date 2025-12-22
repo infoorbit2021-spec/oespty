@@ -12,12 +12,12 @@ export default function Footer() {
                       height={190} 
                       priority 
                     />
-          <p className="text-slate-400 text-sm">Leading provider of engineering & infrastructure consultancy services.</p>
+          <p className="text-slate-300 text-sm">Leading provider of engineering & infrastructure consultancy services.</p>
         </div>
 
          <div>
           <h4 className="font-semibold mb-3">Services</h4>
-          <ul className="space-y-2 text-slate-400">
+          <ul className="space-y-2 text-slate-300">
            <li>HVAC BIM Modelling </li>
            <li>Coordination and Clash Detection</li>
            <li>Documentation and Shop Drawings</li>
@@ -27,7 +27,7 @@ export default function Footer() {
 
         <div>
           <h4 className="font-semibold mb-3">Company</h4>
-          <ul className="space-y-2 text-slate-400">
+          <ul className="space-y-2 text-slate-300">
             <li><a href="/about">About Us</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="/projects">Projects</a></li>
@@ -37,8 +37,8 @@ export default function Footer() {
 
         <div>
           <h4 className="font-semibold mb-3">Contact</h4>
-          <p className="text-slate-400 text-sm">info@oespty.com</p>
-          <p className="text-slate-400 text-sm"> 0433-219-447</p>
+          <p className="text-slate-300 text-sm">info@oespty.com</p>
+          <p className="text-slate-300 text-sm"> 0433-219-447</p>
         </div>
 
       </div>

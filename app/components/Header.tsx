@@ -17,6 +17,7 @@ export default function Header() {
     { name: 'Projects', href: '/projects' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Careers', href: '/careers' },
+    { name: 'Sample Projects', href: '/sample-projects' },
   ];
 
   return (
