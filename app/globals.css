@@ -173,3 +173,9 @@ img.object-cover:hover { transform: scale(1.1); transform-origin: center center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
