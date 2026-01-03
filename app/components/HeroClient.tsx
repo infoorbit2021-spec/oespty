@@ -51,41 +51,30 @@ export default function HeroClient({ slides }: { slides: any[] }) {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm">
             ⭐ Excellence in Engineering
           </div>
-         <h1 className="mt-4 text-4xl md:text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-200 block leading-tight">
+          <h1 className="mt-4 text-4xl md:text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-200 block leading-tight">
             {slide.Title}
           </h1>
-
           <p className="mt-4 text-lg text-slate-200">{slide.Subtitle}</p>
-          {/* <div className="mt-6 flex gap-4">
-            <a
-              href="/services"
-              className="inline-flex items-center gap-3 bg-white text-blue-900 px-4 py-2 rounded shadow"
-            >
-              {slide.CtaText || "Explore Services"}
-            </a>
-            <a
-              href="/projects"
-              className="inline-flex items-center gap-3 border border-white/30 px-4 py-2 rounded"
-            >
-              View Projects
-            </a>
-          </div> */}
         </div>
       </div>
- <div className="absolute z-30 top-70 flex justify-start w-full gap-6 ms-10">
+
+      {/* CTA Buttons */}
+      <div className=" w-100 absolute flex flex-col md:flex-row gap-4 md:gap-6 
+                      left-1/2 md:left-auto top-1/2 md:top-[50%] transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 z-30 px-4">
         <a
           href="/projects"
-          className="pointer-events-auto px-8 py-4 bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 transition-all rounded-xl shadow-lg text-white font-semibold"
+          className="pointer-events-auto px-8 py-4 bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 transition-all rounded-xl shadow-lg text-white font-semibold text-center"
         >
           View Projects
         </a>
         <a
           href="/services"
-          className="pointer-events-auto px-8 py-4 bg-black/50 hover:bg-black/80 transition-all rounded-xl shadow-lg text-white font-semibold"
+          className="pointer-events-auto px-8 py-4 bg-black/50 hover:bg-black/80 transition-all rounded-xl shadow-lg text-white font-semibold text-center"
         >
           Explore Services
         </a>
-      </div>  
+      </div>
+
       {/* Dots */}
       <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-3" style={{bottom:"15%"}}>
         {slides.map((_: any, i: number) => (

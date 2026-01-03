@@ -50,13 +50,13 @@ const projectLimit = parseInt(projectLimitRow?.Value || "0", 10)
             </Reveal>
 
            
-              <div className='absolute w-full bg-transparent' style={{bottom:"-50px"}}>
-              <Stats data={statsData} pathname="/" />
+              <div className='absolute w-full bg-transparent bottom-[-200px] md:bottom-[-90px]'>
+              <Stats data={statsData} />
 </div>
            
 </div>
             <Reveal>
-              <section className="ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
+              <section className="pt-[40%] md:pt-0 ps-4 grid lg:grid-cols-[2fr_1fr] gap-12 items-stretch me-0">
                 <div>
                   <Services  limit={4}/>
                 </div>

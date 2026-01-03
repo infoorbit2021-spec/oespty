@@ -1,60 +1,67 @@
-'use client'
+'use client';
+
 import { useEffect, useState } from "react";
 
 export type StatItem = {
   Label: string;
   Count: string | number;
-  Icons:string;
+  Icons: string;
 };
 
-export default function Stats({ data, pathname }: { data: StatItem[], pathname: string }) {
-
-  const applyLiftStyle = pathname === "/projects";
-
+export default function Stats({
+  data,
+}: {
+  data: StatItem[];
+}) {
   return (
-    <section className="bg-transparent px-5">
-      <div className="mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 w-[80%]">
-        {data.map((stat, i) => (
-          <div
-            key={i}
-            className={`bg-gradient-to-r from-white to-[#f1f5f9]
-p-6 rounded-lg shadow text-center ${
-              applyLiftStyle ? "-mt-16 relative z-[9]" : ""
-            }`}
-          >
-            <div className="flex text-4xl font-bold text-blue-600">
-              <div
-  dangerouslySetInnerHTML={{ __html: stat.Icons }}
-  className="w-10 h-10 me-8"
-></div>
-           
-              <AnimatedNumber value={stat.Count} />
+    <section className="relative w-full py-10">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {data.map((stat, i) => (
+            <div
+              key={i}
+              className="bg-gradient-to-r from-white to-[#f1f5f9] p-5 rounded-xl shadow text-center"
+            >
+              <div className="flex items-center justify-center gap-3 text-2xl font-bold text-blue-600">
+                <div
+                  className="flex-shrink-0 w-9 h-9"
+                  dangerouslySetInnerHTML={{ __html: stat.Icons }}
+                />
+                <div className="flex-shrink-0">
+    <AnimatedNumber value={stat.Count} />
+  </div>
+              </div>
+
+              <div className="mt-2 text-xs text-slate-600">
+                {stat.Label}
+              </div>
             </div>
-            <div className="text-sm text-slate-600 mt-2">{stat.Label}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-
-// 🔥 Embedded Animated Number Logic
-function AnimatedNumber({ value, duration = 1500 }: { value: string | number, duration?: number }) {
+function AnimatedNumber({
+  value,
+  duration = 1500,
+}: {
+  value: string | number;
+  duration?: number;
+}) {
   const [count, setCount] = useState(0);
-
-  // Extract digits only (handles 500+, 2,000, 90%)
-  const numericValue = Number(String(value).replace(/\D/g, ""));
+  const numericValue = Number(String(value).replace(/\D/g, "")) || 0;
 
   useEffect(() => {
     let start = 0;
-    const increment = numericValue / (duration / 16); // ~60fps
+    const step = Math.max(numericValue / (duration / 16), 1);
 
     const interval = setInterval(() => {
-      start += increment;
+      start += step;
       if (start >= numericValue) {
-        clearInterval(interval);
         setCount(numericValue);
+        clearInterval(interval);
       } else {
         setCount(Math.floor(start));
       }
@@ -63,8 +70,6 @@ function AnimatedNumber({ value, duration = 1500 }: { value: string | number, du
     return () => clearInterval(interval);
   }, [numericValue, duration]);
 
-  // Add back suffixes like "+" or "%"
   const suffix = String(value).replace(/[0-9,]/g, "");
-
   return <span>{count.toLocaleString()}{suffix}</span>;
 }

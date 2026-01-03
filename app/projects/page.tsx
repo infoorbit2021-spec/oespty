@@ -53,7 +53,7 @@ console.log("slides.........................................",hero);
 
       {/* STATS SECTION */}
       <div>
-         <Stats data={statsData} pathname="/projects" />
+         <Stats data={statsData} />
         
       </div>
       {/* FILTERS */}
