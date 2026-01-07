@@ -147,9 +147,9 @@ export default async function ProjectDetail({ slug }: { slug: string }) {
                   <a href="/contact" className="text-center bg-blue-600 text-white px-4 py-2 rounded">
                     Contact Us
                   </a>
-                  <a href="#" className="text-center border border-slate-300 px-4 py-2 rounded">
+                  {/* <a href="#" className="text-center border border-slate-300 px-4 py-2 rounded">
                     Download Case Study
-                  </a>
+                  </a> */}
                 </div>
               </div>
             )}

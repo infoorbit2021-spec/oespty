@@ -57,12 +57,12 @@ export default function ProjectsFilter({ projectRows }: { projectRows: Project[]
           />
 
           {/* Status */}
-          <FilterSection
+          {/* <FilterSection
             title="Status"
             options={statuses}
             selected={selectedStatus}
             onSelect={setSelectedStatus}
-          />
+          /> */}
         </div>
       </div>
 
