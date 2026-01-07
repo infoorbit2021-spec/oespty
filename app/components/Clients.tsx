@@ -16,15 +16,16 @@ export default function Clients() {
 
         {/* Slider Wrapper */}
         <div className="relative w-full overflow-hidden">
-          <motion.div
+         <motion.div
             className="flex gap-10"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ rotate: [0, 360] }}
             transition={{
               repeat: Infinity,
               ease: "linear",
               duration: 15,
             }}
           >
+
             {/* Duplicate the list to create infinite scroll effect */}
             {[...clients, ...clients].map((logo, i) => (
               <div
