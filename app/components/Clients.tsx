@@ -1,10 +1,30 @@
 "use client";
 import { useRef } from "react";
 import { motion, useAnimationFrame } from "framer-motion";
+import { getSheetData } from '../lib/fetchGoogleSheet';
 
-export default function Clients() {
-  const clients = ["ae_smith.png", "air_master.png", "ambient_services.jpg", "amin_group.png",  "climatech.png", "equilibrium.jpg", "fredon.jpg", "Icon_mechanical_services.png", "jec_airconditioning.jpg",  "metalair_sheetmetal.png", "precise_air.png", "protech.png", "Icon_mechanical_services.png", "redstar.jpg",  "seda_services_logo.jpg", "varium.png"];
+export default async function Clients() {
+  const rows = await getSheetData('Home');
+  const clientData: Record<string, string> = {};
 
+let clients: string[] = [];
+
+rows.forEach((row: any) => {
+  if (
+    row.Section?.toLowerCase() === "clientlogos" &&
+    row.Field === "image"
+  ) {
+    try {
+      const parsed = JSON.parse(row.Value);
+      if (Array.isArray(parsed)) {
+        clients = parsed;
+      }
+    } catch (e) {
+      console.error("Failed to parse client logos:", row.Value);
+    }
+  }
+});
+  
   const baseX = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
 

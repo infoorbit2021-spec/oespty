@@ -37,13 +37,13 @@ export default async function About() {
           </ul>
         </div>
         <div>
-          {aboutData.image && (
+          
           <img
               src={`/img/${aboutData.image}`}
               alt={aboutData.title || 'About Image'}
             className="rounded-lg shadow-lg mx-auto"
           />
-        )}
+       
         </div>
       </div>
     </section>
