@@ -72,7 +72,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
       {/* Arrows */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/3 -translate-y-1/2 z-30 
+        className="absolute left-4 top-[40%] md:top-1/2 -translate-y-1/4 md:-translate-y-1/4 z-30 
                    p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -80,7 +80,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
 
       <button
         onClick={next}
-        className="absolute right-4 top-1/3 -translate-y-1/2 z-30 
+        className="absolute right-4 top-[40%] md:top-1/2 -translate-y-1/4  md:-translate-y-1/4 z-30 
                    p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
       >
         <ChevronRight className="w-6 h-6" />
