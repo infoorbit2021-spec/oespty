@@ -14,16 +14,15 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Sample Projects', href: '/sample-projects' },
+    { name: 'Sample Drawings', href: '/sample-drawings' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Careers', href: '/careers' },
-    
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <div className=" mx-auto px-4 flex items-center justify-between h-20">
+      <div className="mx-auto px-4 flex items-center justify-between h-20">
         
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
@@ -36,8 +35,8 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-8 text-slate-700 font-medium">
+        {/* Desktop Menu (lg and above) */}
+        <nav className="hidden lg:flex gap-8 text-slate-700 font-medium">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -50,7 +49,7 @@ export default function Header() {
             >
               {item.name}
 
-              {/* underline visible only when active */}
+              {/* underline only for active */}
               {pathname === item.href && (
                 <span className="absolute bottom-[-6px] left-0 w-full h-[2px] bg-[#8cccd4] rounded-full"></span>
               )}
@@ -58,18 +57,18 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile + Tablet Hamburger Toggle (lg hidden) */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-slate-700"
+          className="lg:hidden text-slate-700"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile + Tablet Dropdown Menu */}
       {open && (
-        <nav className="md:hidden flex flex-col gap-5 px-6 pb-6 text-slate-700 bg-white border-t shadow-lg animate-slideDown">
+        <nav className="lg:hidden flex flex-col gap-5 px-6 pb-6 text-slate-700 bg-white border-t shadow-lg animate-slideDown">
           {navItems.map((item) => (
             <Link
               key={item.href}

@@ -12,7 +12,7 @@ export default function Footer() {
                       height={190} 
                       priority 
                     />
-          <p className="text-slate-300 text-sm">Leading provider of engineering & infrastructure consultancy services.</p>
+          {/* <p className="text-slate-300 text-sm">Leading provider of engineering & infrastructure consultancy services.</p> */}
         </div>
 
          <div>

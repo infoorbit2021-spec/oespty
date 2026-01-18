@@ -2,86 +2,79 @@
 
 import { useState } from "react";
 
-
-
-export default function Services({servicedata}:{servicedata:any[]}) {
-  const [active, setActive] = useState(0);
+export default function Services({ servicedata }: { servicedata: any[] }) {
+  const [active, setActive] = useState<number | null>(0);
   const tabs = servicedata;
-  console.log("tabs --------------------------------- ",tabs);
+
   return (
-    // <section className="py-20 bg-white" id="services">
-    //   <div className=" mx-auto px-4">
-        
-    //     {/* Heading */}
-    //     <div className="text-center mb-12">
-    //       <h2 className="text-3xl md:text-4xl font-bold">Services Offered</h2>
-    //       <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-    //     </div>
+    <section className="py-20 bg-white" id="services">
+      <div className="mx-auto px-4 max-w-7xl">
 
-    //     {/* Tabs */}
-    //     <div className="max-w-4xl mx-auto">
-    //       <div className="flex flex-wrap justify-center gap-3 mb-10">
-    //         {tabs.map((tab, i) => (
-    //           <button
-    //             key={i}
-    //             onClick={() => setActive(i)}
-    //             className={`flex items-center gap-2 px-5 py-3 rounded-full text-sm transition-all
-    //             ${
-    //               active === i
-    //                 ? "bg-blue-600 text-white shadow-md"
-    //                 : "bg-white text-gray-600 border hover:bg-blue-50"
-    //             }`}
-    //           >
-    //             <i className={tab.icon}></i>
-    //             {tab.title}
-    //           </button>
-    //         ))}
-    //       </div>
+        {/* ================= MOBILE & TABLET (ACCORDION) ================= */}
+        <div className="lg:hidden space-y-4">
+          {tabs.map((tab, index) => {
+            const isOpen = active === index;
 
-    //       {/* Content Area */}
-    //       <div className="bg-white shadow-md p-6 rounded-xl text-gray-700 leading-relaxed animate-fadeIn">
-    //         {tabs[active].content}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </section>
-     <section className="py-20 bg-white" id="services">
-      <div className=" mx-auto px-4">
+            return (
+              <div
+                key={index}
+                className="border rounded-lg overflow-hidden"
+              >
+                <button
+                  onClick={() => setActive(isOpen ? null : index)}
+                  className={`w-full flex justify-between items-center px-5 py-4 text-left transition
+                    ${
+                      isOpen
+                        ? "bg-[#a500da] text-white"
+                        : "bg-white text-gray-800"
+                    }
+                  `}
+                >
+                  <span className="font-medium">{tab.Title}</span>
+                  <span
+                    className={`transform transition-transform ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
 
-        {/* Heading */}
-        {/* <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            {tabs.Title || "Services Offered"}
-          </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-        </div> */}
+                {isOpen && (
+                  <div className="px-5 py-4 text-gray-700 bg-gray-50 animate-fadeIn">
+                    {tab.ShortDescription}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
 
-        {/* Layout Wrapper */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* ================= DESKTOP (UNCHANGED TABS LAYOUT) ================= */}
+        <div className="hidden lg:grid grid-cols-4 gap-10">
 
           {/* Left: Tab Buttons */}
-          <div className="space-y-3 md:col-span-1">
+          <div className="space-y-3 col-span-1">
             {tabs.map((tab, index) => (
               <button
                 key={index}
                 onClick={() => setActive(index)}
-                className={`flex items-center gap-3 w-full text-left px-5 py-4 rounded-lg border transition-all 
+                className={`flex items-center gap-3 w-full text-left px-5 py-4 rounded-lg border transition-all
                   ${
                     active === index
-                      ? "bg-[#a500da] text-white shadow-lg border-blue-600"
+                      ? "bg-[#a500da] text-white shadow-lg"
                       : "bg-white text-gray-700 hover:bg-blue-50"
                   }
                 `}
               >
-                {/* {tab.Icon && <i className={`${tab.Icon} text-lg`}></i>} */}
-                <span className="font-medium text-sm md:text-base">{tab.Title}</span>
+                <span className="font-medium text-base">{tab.Title}</span>
               </button>
             ))}
           </div>
 
           {/* Right: Content */}
-          <div className="md:col-span-3 bg-white p-8 rounded-xl shadow-lg leading-relaxed text-gray-700 animate-fadeIn">
-            {tabs[active].ShortDescription}
+          <div className="col-span-3 bg-white p-8 rounded-xl shadow-lg leading-relaxed text-gray-700 animate-fadeIn">
+            {tabs[active ?? 0]?.ShortDescription}
           </div>
 
         </div>
