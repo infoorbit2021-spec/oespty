@@ -211,7 +211,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/sample-projects": {
+    "/sample-drawings": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -225,8 +225,8 @@
       ],
       "initialRevalidateSeconds": 600,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/sample-projects",
-      "dataRoute": "/sample-projects.rsc",
+      "srcRoute": "/sample-drawings",
+      "dataRoute": "/sample-drawings.rsc",
       "prefetchDataRoute": null,
       "allowHeader": [
         "host",
@@ -267,8 +267,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "ac39b262c8e345ce329a19f9948dbde5",
-    "previewModeSigningKey": "8e7ab864824ae0095c4e9616e8a9bccc6b56d991d82223eb428ac2d81369927b",
-    "previewModeEncryptionKey": "b95a2c8c77af83dda79badb9fc0f898d8a102583846c94cdfaaf1b8841a80fe6"
+    "previewModeId": "1000df51a4589308bc14e6700599cb4f",
+    "previewModeSigningKey": "00751b1016b1bd936b46aeae618eddcc2694eb284a9515e88e9a460e20a7801b",
+    "previewModeEncryptionKey": "f31ed2521b9ec8cf17417bae03faa3cb946b07312bab09ca824f0a470ccf1f82"
   }
 }

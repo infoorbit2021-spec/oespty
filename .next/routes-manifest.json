@@ -91,10 +91,10 @@
       "namedRegex": "^/projects(?:/)?$"
     },
     {
-      "page": "/sample-projects",
-      "regex": "^/sample\\-projects(?:/)?$",
+      "page": "/sample-drawings",
+      "regex": "^/sample\\-drawings(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/sample\\-projects(?:/)?$"
+      "namedRegex": "^/sample\\-drawings(?:/)?$"
     },
     {
       "page": "/services",

@@ -10,6 +10,6 @@
   "/page": "/",
   "/projects/[slug]/page": "/projects/[slug]",
   "/projects/page": "/projects",
-  "/sample-projects/page": "/sample-projects",
+  "/sample-drawings/page": "/sample-drawings",
   "/services/page": "/services"
 }
