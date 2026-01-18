@@ -72,7 +72,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
       {/* Arrows */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 
+        className="absolute left-4 top-1/3 -translate-y-1/2 z-30 
                    p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -80,7 +80,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
 
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 
+        className="absolute right-4 top-1/3 -translate-y-1/2 z-30 
                    p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
       >
         <ChevronRight className="w-6 h-6" />
@@ -97,12 +97,12 @@ export default function HeroClient({ slides }: { slides: any[] }) {
             {slide.Title}
           </h1>
 
-          <p className="mt-4 text-sm sm:text-base lg:text-lg text-slate-200">
+          <p className="mt-4 mb-10 md:mb-0 text-sm sm:text-base lg:text-lg text-slate-200">
             {slide.Subtitle}
           </p>
 
           {/* CTA */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className=" mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="/projects"
               className="px-8 py-4 bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 transition rounded-xl font-semibold"
