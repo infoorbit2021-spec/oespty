@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HeroClient({ slides }: { slides: any[] }) {
@@ -27,10 +27,20 @@ export default function HeroClient({ slides }: { slides: any[] }) {
   const prev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
   const next = () => setIndex((i) => (i + 1) % slides.length);
 
+  // Swipe handler with velocity & distance
+  const handleDragEnd = (_: any, info: PanInfo) => {
+    const swipeThreshold = 50; // minimum pixels
+    const swipeVelocity = 0.3; // velocity threshold
+
+    if (info.offset.x > swipeThreshold || info.velocity.x > swipeVelocity) {
+      prev();
+    } else if (info.offset.x < -swipeThreshold || info.velocity.x < -swipeVelocity) {
+      next();
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden text-white 
-                        h-[60vh] sm:h-[70vh] lg:h-[80vh]
-                        flex items-center">
+    <section className="relative overflow-hidden text-white h-[60vh] sm:h-[70vh] lg:h-[80vh] flex items-center">
 
       {/* Background image */}
       <AnimatePresence mode="wait">
@@ -41,6 +51,10 @@ export default function HeroClient({ slides }: { slides: any[] }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.25} // makes the drag feel more natural
+          onDragEnd={handleDragEnd}
         >
           {slide.Image && (
             <img
@@ -55,10 +69,10 @@ export default function HeroClient({ slides }: { slides: any[] }) {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30" />
 
-      {/* Arrows (hidden on mobile) */}
+      {/* Arrows */}
       <button
         onClick={prev}
-        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 
                    p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -66,7 +80,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
 
       <button
         onClick={next}
-        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 
                    p-3 rounded-full bg-black/40 hover:bg-black/70 transition"
       >
         <ChevronRight className="w-6 h-6" />
@@ -75,8 +89,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
       {/* Content */}
       <div className="relative z-10 w-full px-6 sm:px-12 lg:px-24 text-center lg:text-left">
         <div className="max-w-2xl mx-auto lg:mx-0">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur 
-                          px-4 py-2 rounded-full text-xs sm:text-sm">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-xs sm:text-sm">
             ⭐ Excellence in Engineering
           </div>
 
@@ -92,16 +105,13 @@ export default function HeroClient({ slides }: { slides: any[] }) {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="/projects"
-              className="px-8 py-4 bg-white/15 border border-white/30 
-                         backdrop-blur-md hover:bg-white/25 transition rounded-xl 
-                         font-semibold"
+              className="px-8 py-4 bg-white/15 border border-white/30 backdrop-blur-md hover:bg-white/25 transition rounded-xl font-semibold"
             >
               View Projects
             </a>
             <a
               href="/services"
-              className="px-8 py-4 bg-black/50 hover:bg-black/80 
-                         transition rounded-xl font-semibold"
+              className="px-8 py-4 bg-black/50 hover:bg-black/80 transition rounded-xl font-semibold"
             >
               Explore Services
             </a>
@@ -115,8 +125,7 @@ export default function HeroClient({ slides }: { slides: any[] }) {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-2.5 h-2.5 rounded-full transition 
-              ${i === index ? "bg-white" : "bg-white/40"}`}
+            className={`w-2.5 h-2.5 rounded-full transition ${i === index ? "bg-white" : "bg-white/40"}`}
           />
         ))}
       </div>
