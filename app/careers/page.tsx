@@ -113,7 +113,7 @@ export default async function CareersPage() {
                   <h3 className="text-lg font-semibold mb-2 text-slate-800">
                     {job.title}
                   </h3>
-                  <p className="text-slate-600 mb-4">{job.description}</p>
+                  <div  className="text-slate-600 mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mt-2" dangerouslySetInnerHTML={{ __html: job.description }} />
                   <div className="flex flex-wrap gap-2">
                     {job.highlight1 && (
                       <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm border border-emerald-300">

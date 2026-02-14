@@ -23,27 +23,25 @@ export default function Services({ servicedata }: { servicedata: any[] }) {
                 <button
                   onClick={() => setActive(isOpen ? null : index)}
                   className={`w-full flex justify-between items-center px-5 py-4 text-left transition
-                    ${
-                      isOpen
-                        ? "bg-[#a500da] text-white"
-                        : "bg-white text-gray-800"
+                    ${isOpen
+                      ? "bg-[#a500da] text-white"
+                      : "bg-white text-gray-800"
                     }
                   `}
                 >
                   <span className="font-medium">{tab.Title}</span>
                   <span
-                    className={`transform transition-transform ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`transform transition-transform ${isOpen ? "rotate-180" : ""
+                      }`}
                   >
                     ▼
                   </span>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 py-4 text-gray-700 bg-gray-50 animate-fadeIn">
-                    {tab.ShortDescription}
-                  </div>
+
+                  <div className="px-5 py-4 text-gray-700 bg-gray-50 animate-fadeIn" dangerouslySetInnerHTML={{ __html: tab.ShortDescription }} />
+
                 )}
               </div>
             );
@@ -60,10 +58,9 @@ export default function Services({ servicedata }: { servicedata: any[] }) {
                 key={index}
                 onClick={() => setActive(index)}
                 className={`flex items-center gap-3 w-full text-left px-5 py-4 rounded-lg border transition-all
-                  ${
-                    active === index
-                      ? "bg-[#a500da] text-white shadow-lg"
-                      : "bg-white text-gray-700 hover:bg-blue-50"
+                  ${active === index
+                    ? "bg-[#a500da] text-white shadow-lg"
+                    : "bg-white text-gray-700 hover:bg-blue-50"
                   }
                 `}
               >
@@ -73,9 +70,13 @@ export default function Services({ servicedata }: { servicedata: any[] }) {
           </div>
 
           {/* Right: Content */}
-          <div className="col-span-3 bg-white p-8 rounded-xl shadow-lg leading-relaxed text-gray-700 animate-fadeIn">
-            {tabs[active ?? 0]?.ShortDescription}
-          </div>
+
+          <div
+            className="col-span-3 bg-white p-8 rounded-xl shadow-lg leading-relaxed text-gray-700 animate-fadeIn"
+            dangerouslySetInnerHTML={{
+              __html: tabs[active ?? 0]?.ShortDescription || "",
+            }}
+          />
 
         </div>
       </div>
